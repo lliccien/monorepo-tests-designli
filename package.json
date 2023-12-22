@@ -7,7 +7,7 @@
     "prepare": "husky install",
     "build": "turbo build",
     "format": "turbo format",
-    "start": "turbo start",
+    "start:dev": "turbo start:dev",
     "start:debug": "turbo start:debug",
     "start:prod": "turbo start:prod",
     "lint": "turbo lint",
