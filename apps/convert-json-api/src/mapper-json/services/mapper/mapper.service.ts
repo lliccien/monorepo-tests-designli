@@ -4,12 +4,12 @@ import { plainToClass } from 'class-transformer';
 
 @Injectable()
 export class MapperService {
-  mappedRecord(originalRecord: OriginalRecord): TransformedRecord[] {
+  mappedRecord(originalRecord: OriginalRecord): TransformedRecord {
     const result = originalRecord.Records.map((record) =>
       plainToClass(TransformedRecord, record, {
         excludeExtraneousValues: true,
       }),
     );
-    return result;
+    return result[0];
   }
 }
