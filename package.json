@@ -1,0 +1,41 @@
+{
+  "name": "monorepo-tests-designli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "build": "turbo build",
+    "format": "turbo format",
+    "start": "turbo start",
+    "start:debug": "turbo start:debug",
+    "start:prod": "turbo start:prod",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "test:watch": "turbo test:watch",
+    "test:cov": "turbo test:cov",
+    "test:debug": "turbo test:debug",
+    "test:e2e": "turbo test:e2e",
+    "lint-staged": "lint-staged — config .lintstagedrc",
+    "commit": "./node_modules/cz-customizable/standalone.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "apps/*"
+  ],
+  "devDependencies": {
+    "commitlint": "^18.4.3",
+    "commitlint-config-gitmoji": "^2.3.1",
+    "cz-customizable": "^7.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "turbo": "^1.11.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
+    }
+  }
+}
