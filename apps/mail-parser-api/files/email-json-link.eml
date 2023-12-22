@@ -1,0 +1,85 @@
+Delivered-To: ludwring.liccien@gmail.com
+Received: by 2002:ac8:6bd5:0:b0:427:7995:e3f with SMTP id b21csp1127866qtt;
+        Fri, 22 Dec 2023 08:28:45 -0800 (PST)
+X-Received: by 2002:a05:6870:e249:b0:204:4e60:1456 with SMTP id d9-20020a056870e24900b002044e601456mr883099oac.53.1703262525327;
+        Fri, 22 Dec 2023 08:28:45 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1703262525; cv=none;
+        d=google.com; s=arc-20160816;
+        b=SCaRmXYe/j9+1vMJfvoO2VKBWdMZvzdLFtgFGautPilQCUWaGQFB+xD2M0oGE5tMFl
+         v7oBz7Nzhh724YRUrLFocZVEvjWzNHpK5mPjBJkXqLpBPo9rHcFjeZWZaJwB0UkenUWO
+         O6GQ3IoH/qrFgUBewlrsT0sWusu4OyPf/ObjxqYwlvhN2d2JbRNsnzYoLbVIQm2W+U+0
+         4L+9FQOpOwg+YBz7U6gftWTqFn3neckQHWDhu92uHfhZyLuzVICh4wUqZENQydhZd1hH
+         lip1qKGcooQF0Lb7kaNzY17SdJVgUhk/aAPPIafZiwTVhaIpFR05XVy7ZtiG079LfoHk
+         0xLQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=vzo8NPjjaM5px6JhtsYtkxwIv2ejz+PYjmSUdfTXgtE=;
+        fh=j/3eG1UVLkhPDYnLPBMppVY2XLENRICyj2CZuxQ3Nk0=;
+        b=ZTeWW1kFRPz2nJr0UhRXi3UHWEEFxwY54jRrtQRpvrRxc6yeHQxOEQumPbT6IOIt2b
+         5XN9V6MMefi3vUvd1YIxA8uNOHslDNJ4a2ByQGQBHd2jhT0qiec1ZQOxv3CXGrHx0t8S
+         jEJQyS7RLdclPqh758dMPuWyHVIZCTwbyNbw/pKBLikCfV59Pt5CCJbi0JSeTIMuX+fG
+         bWb57XgC2AAQTQ47+x9pkn0ZrCyY8qehaN43axOVMkt6fdRnHzBU1zLJ+AQDHnj/qNHe
+         TwKiCZ+s2FiF1zLz+ZFXwC0URCuSvLd5Hm8/4udpmPSjn7H3YdaQKmZfAwT0bTpPw6i7
+         +FVQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=SS5nY0Up;
+       spf=pass (google.com: domain of lliccien@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=lliccien@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <lliccien@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id v26-20020a056830141a00b006dbb6260f02sor1844518otp.10.2023.12.22.08.28.45
+        for <ludwring.liccien@gmail.com>
+        (Google Transport Security);
+        Fri, 22 Dec 2023 08:28:45 -0800 (PST)
+Received-SPF: pass (google.com: domain of lliccien@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=SS5nY0Up;
+       spf=pass (google.com: domain of lliccien@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=lliccien@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1703262525; x=1703867325; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=vzo8NPjjaM5px6JhtsYtkxwIv2ejz+PYjmSUdfTXgtE=;
+        b=SS5nY0UpNzihUwdydsTNj8toQtQ1h++xtYP+oP149dFYeeKQ+eWpZYs8Mbj9p4UEzD
+         f2UOprFe0g6S69jW3nLR5viJGj7LYUKy2xyxyrchqQ1/hIVtjx0io2rkOpeV15R57hlL
+         2DRgs3CrvJ5yK2p3tkwg7srOdufPitMfteOfT0NHGxP6PYakgZOeG6D+6Bi7M3Dn59Oy
+         Md40g00whYbCxqvsO5N8DrPMlupVs5ShGlIQcDzo8AT+rUxo+udrNmEJ+07JDV9V5WBX
+         7iNoiREOSde5gv+S/4gifysjz1pNTo2fPTNHY0PLgiFFRIUzAAxk8BEdmPMJZ3cDnASF
+         Q3Pg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1703262525; x=1703867325;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=vzo8NPjjaM5px6JhtsYtkxwIv2ejz+PYjmSUdfTXgtE=;
+        b=E1ynIMpsuE/9abOkk9cxi3E/wapucv46LPp7mMbasR6qr9lMwoKQc/A+amR2JhURd4
+         MYsIw07/2KsBbZaVmoxVO9kbHUS3ETfqnQnqFzKVFlrSw/FOgJ2HQEBhynPkvN+IOuRu
+         c4/deMQyCGtcbluY/mAsPzJqcSaRowd/JSuH9W8XyV/WhOMzly6VwrNvXO3Fguxb5DSU
+         HD6Y/t3oqfvbvHIT02lj3d6jj6s1FxU0y48LQa3VqFqENgdQ6sT0RgT9T76zZ3cBcurQ
+         DG/EPJnOuVyXTmtoJmp+ffgdKhLf2l6B6cqyNTo9lYicInxAcQ3hh34Ni+xQnhwkb9PT
+         ve+Q==
+X-Gm-Message-State: AOJu0YwUbBOvpxpI8eNndWce+pQJTBkiNlYUAxuKkr43XkDnGpPxNQuS
+	JYrdqJbB/CdB9e5PB782VjOaHkXPJkkVq0HuPZb6J62A
+X-Google-Smtp-Source: AGHT+IHsjYdhE9z76Qj4EK8lt/ITEvCMUlEJ3B6lqw6e+CK3KXIuvucYdrvsQIhq48+7zS83ZqgxT45pqCYtBiCLx70=
+X-Received: by 2002:a05:6830:138a:b0:6db:9c2b:c2ee with SMTP id
+ d10-20020a056830138a00b006db9c2bc2eemr1260518otq.47.1703262524821; Fri, 22
+ Dec 2023 08:28:44 -0800 (PST)
+MIME-Version: 1.0
+From: Ludwring Liccien <lliccien@gmail.com>
+Date: Fri, 22 Dec 2023 11:28:34 -0500
+Message-ID: <CACyB+T6wWxF_C59CavFPTOibsxV9TK=u-nJN90KxS2CGr2_n9w@mail.gmail.com>
+Subject: Email json link
+To: Ludwing Liccien <ludwring.liccien@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000c0567b060d1bb578"
+
+--000000000000c0567b060d1bb578
+Content-Type: text/plain; charset="UTF-8"
+
+https://jsonplaceholder.typicode.com/users
+
+--000000000000c0567b060d1bb578
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr"><a href="https://jsonplaceholder.typicode.com/users">https://jsonplaceholder.typicode.com/users</a><br></div>
+
+--000000000000c0567b060d1bb578--
