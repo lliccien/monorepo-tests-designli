@@ -23,7 +23,6 @@ export class EmailController {
       }
       return res.status(HttpStatus.OK).json(emailData);
     } catch (error) {
-      console.error('Error:', error);
       return res
         .status(HttpStatus.INTERNAL_SERVER_ERROR)
         .send('Error al procesar el correo electrónico.');

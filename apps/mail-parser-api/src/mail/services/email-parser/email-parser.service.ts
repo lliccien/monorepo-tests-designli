@@ -40,7 +40,13 @@ export class EmailParserService {
   }
 
   private extractAttachedJson(parsedEmail: ParsedMail): any | null {
-    for (const attachment of parsedEmail.attachments) {
+    if (
+      parsedEmail.attachments == undefined &&
+      !Array.isArray(parsedEmail.attachments)
+    ) {
+      return null;
+    }
+    for (const attachment of parsedEmail?.attachments) {
       if (attachment.contentType === 'application/json') {
         return JSON.parse(attachment.content.toString());
       }
