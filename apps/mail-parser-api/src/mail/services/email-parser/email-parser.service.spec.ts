@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { EmailParserService } from './email-parser.service';
-import * as mailparser from 'mailparser';
+import mailparser from 'mailparser';
 import * as fs from 'fs/promises';
 import axios from 'axios';
 
