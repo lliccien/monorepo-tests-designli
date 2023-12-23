@@ -7,7 +7,9 @@ export class MapperPostController {
   constructor(private readonly mapperService: MapperService) {}
 
   @Post()
-  async transform(@Body() record: OriginalRecord): Promise<TransformedRecord> {
+  async transform(
+    @Body() record: OriginalRecord,
+  ): Promise<TransformedRecord[]> {
     return this.mapperService.mappedRecord(record);
   }
 }

@@ -140,6 +140,6 @@ describe('AppController (e2e)', () => {
       .post('/mapper-json')
       .send(originalRecord)
       .expect(201)
-      .expect(transformedRecord);
+      .expect([transformedRecord]);
   });
 });

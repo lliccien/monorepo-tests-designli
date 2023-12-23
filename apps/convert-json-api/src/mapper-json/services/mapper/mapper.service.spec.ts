@@ -139,13 +139,29 @@ describe('MapperService', () => {
   it('should map an OriginalRecord to a TransformedRecord', () => {
     const result = service.mappedRecord(originalRecord);
 
-    expect(result).toBeInstanceOf(TransformedRecord);
-    expect(result).toHaveProperty('spam', transformedRecord.spam);
-    expect(result).toHaveProperty('virus', transformedRecord.virus);
-    expect(result).toHaveProperty('dns', transformedRecord.dns);
-    expect(result).toHaveProperty('mes', transformedRecord.mes);
-    expect(result).toHaveProperty('retrasado', transformedRecord.retrasado);
-    expect(result).toHaveProperty('emisor', transformedRecord.emisor);
-    expect(result).toHaveProperty('receptor', transformedRecord.receptor);
+    expect(Array.isArray(result)).toBeTruthy();
+    expect(result.length).toBe(originalRecord.Records.length);
+    result.forEach((transformedResult) => {
+      expect(transformedResult).toBeInstanceOf(TransformedRecord);
+      expect(transformedResult).toHaveProperty('spam', transformedRecord.spam);
+      expect(transformedResult).toHaveProperty(
+        'virus',
+        transformedRecord.virus,
+      );
+      expect(transformedResult).toHaveProperty('dns', transformedRecord.dns);
+      expect(transformedResult).toHaveProperty('mes', transformedRecord.mes);
+      expect(transformedResult).toHaveProperty(
+        'retrasado',
+        transformedRecord.retrasado,
+      );
+      expect(transformedResult).toHaveProperty(
+        'emisor',
+        transformedRecord.emisor,
+      );
+      expect(transformedResult).toHaveProperty(
+        'receptor',
+        transformedRecord.receptor,
+      );
+    });
   });
 });
